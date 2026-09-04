@@ -205,13 +205,16 @@
   text-decoration:none;
   transition:background-color .15s ease, color .15s ease, border-color .15s ease;
 }
-.tmr-btn--primary { background:var(--lime); color:var(--lime-ink); }
-.tmr-btn--primary:hover { background:var(--lime-600); }
-.tmr-btn--ghost { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.55); }
-.tmr-btn--ghost:hover { background:rgba(255,255,255,.12); }
-.tmr-btn--ghost:focus-visible { outline-color:var(--lime); }
-.tmr-btn--outline { background:transparent; color:var(--accent); border:1.5px solid var(--accent); }
-.tmr-btn--outline:hover { background:var(--accent); color:var(--accent-ink); }
+/* .tmr-page prefix keeps these winning over the theme's (and our own) `a` color rule */
+.tmr-page .tmr-btn--primary { background:var(--lime); color:var(--lime-ink); }
+.tmr-page .tmr-btn--primary:hover { background:var(--lime-600); }
+/* Secondary / "ghost" button — the negative of .tmr-btn--outline: cream text + border on
+   the dark hero, inverting to a solid fill on hover. */
+.tmr-page .tmr-btn--ghost { background:transparent; color:var(--cream-50); border:1.5px solid var(--cream-50); }
+.tmr-page .tmr-btn--ghost:hover { background:var(--cream-50); color:var(--accent); }
+.tmr-page .tmr-btn--ghost:focus-visible { outline-color:var(--lime); }
+.tmr-page .tmr-btn--outline { background:transparent; color:var(--accent); border:1.5px solid var(--accent); }
+.tmr-page .tmr-btn--outline:hover { background:var(--accent); color:var(--accent-ink); }
 
 /* ---------- Hero ---------- */
 .tmr-hero {
