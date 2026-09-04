@@ -1,0 +1,178 @@
+<!-- Tacos Mi Rancho — Homepage.html -->
+<!-- Body content only (no <head>, <style>, or <script>), ready to paste into a WordPress page/Custom HTML block. -->
+<!-- Pair with Homepage.css and Homepage.js. All markup is namespaced under .tmr-page. -->
+<!--
+  CONTENT TO VERIFY BEFORE LAUNCH:
+  - Hours: Google listing shows Mon–Fri 10am–9pm; weekend hours unknown (shown as Closed).
+  - All menu prices are illustrative placeholders — confirm with Ismael.
+  - Photo slots are marked with comments; drop images in via WordPress when available.
+-->
+
+<div class="tmr-page" id="top">
+
+  <header class="tmr-header">
+    <div class="tmr-container">
+      <nav class="tmr-nav" aria-label="Primary">
+        <a class="tmr-wordmark" href="#top">Tacos Mi Rancho</a>
+
+        <button class="tmr-nav-toggle" type="button" aria-expanded="false" aria-controls="tmr-nav-links">
+          <span class="tmr-visually-hidden">Toggle menu</span>
+          <span class="tmr-nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="tmr-nav-links" id="tmr-nav-links">
+          <a href="#menu">Menu</a>
+          <a href="#story">Our Story</a>
+          <a href="#find">Find Us</a>
+          <a class="tmr-btn tmr-btn--outline" href="tel:+15714190377">(571)&nbsp;419-0377</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="tmr-section tmr-section--hero">
+      <div class="tmr-container">
+        <div class="tmr-hero">
+          <!-- Optional: add a background photo of the truck via .tmr-hero { background-image: ... } in a child theme. -->
+          <div class="tmr-hero__inner">
+            <span class="tmr-badge">Arlington, VA · Family-run</span>
+            <h1>Real tacos.<br>Parked on Barton&nbsp;St.</h1>
+            <p>Asada, pastor, lengua, birria — grilled to order on the truck at 1401 N Barton St. Cash, card, or call ahead.</p>
+            <div class="tmr-cta-row">
+              <a class="tmr-btn tmr-btn--primary" href="#menu">See the menu</a>
+              <a class="tmr-btn tmr-btn--ghost" href="#find">Find the truck</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="tmr-section" id="menu">
+      <div class="tmr-container">
+        <p class="tmr-eyebrow">The Menu</p>
+        <h2 class="tmr-h2">Choose your meat</h2>
+        <p class="tmr-lede">Everything is grilled to your ticket — meat on the comal, tortillas warmed to order, and house salsas (verde, roja, and a smoky chile de árbol) on the side.</p>
+
+        <!-- Prices below are illustrative placeholders — confirm before launch. -->
+        <div class="tmr-menu-grid">
+
+          <div class="tmr-card">
+            <h3>Tacos</h3>
+            <p class="tmr-card__sub">Double corn tortilla, onion &amp; cilantro</p>
+            <div class="tmr-row"><span class="tmr-row__item">Asada<span class="tmr-row__desc">Grilled steak</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Pastor<span class="tmr-row__desc">Marinated pork, pineapple</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Pollo<span class="tmr-row__desc">Grilled chicken</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Carnitas<span class="tmr-row__desc">Braised pork</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Lengua<span class="tmr-row__desc">Beef tongue</span></span><span class="tmr-row__price">$4.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Camarón<span class="tmr-row__desc">Shrimp</span></span><span class="tmr-row__price">$4.50</span></div>
+          </div>
+
+          <div class="tmr-card">
+            <h3>Quesadillas</h3>
+            <p class="tmr-card__sub">Flour tortilla, melted Oaxaca cheese</p>
+            <div class="tmr-row"><span class="tmr-row__item">Cheese<span class="tmr-row__desc">Just cheese, done right</span></span><span class="tmr-row__price">$6.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Chorizo<span class="tmr-row__desc">House chorizo</span></span><span class="tmr-row__price">$9.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Asada<span class="tmr-row__desc">Grilled steak</span></span><span class="tmr-row__price">$10.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Pastor<span class="tmr-row__desc">Marinated pork</span></span><span class="tmr-row__price">$10.00</span></div>
+          </div>
+
+          <div class="tmr-card">
+            <h3>Burritos &amp; Tortas</h3>
+            <p class="tmr-card__sub">Choice of meat, rice &amp; beans</p>
+            <div class="tmr-row"><span class="tmr-row__item">Burrito<span class="tmr-row__desc">Rice, beans, cheese, salsa</span></span><span class="tmr-row__price">$11.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Torta<span class="tmr-row__desc">Grilled roll, avocado, chipotle mayo</span></span><span class="tmr-row__price">$10.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Add guacamole<span class="tmr-row__desc">or extra meat</span></span><span class="tmr-row__price">$2.00</span></div>
+          </div>
+
+          <div class="tmr-card">
+            <h3>Birria</h3>
+            <p class="tmr-card__sub">Slow-stewed beef, consommé to dip</p>
+            <div class="tmr-row"><span class="tmr-row__item">Birria Tacos<span class="tmr-row__desc">3 pieces + consommé</span></span><span class="tmr-row__price">$14.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Quesabirria<span class="tmr-row__desc">3 pieces, melted cheese</span></span><span class="tmr-row__price">$15.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Consommé<span class="tmr-row__desc">Cup, on its own</span></span><span class="tmr-row__price">$4.00</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="tmr-section" id="story">
+      <div class="tmr-container">
+        <p class="tmr-eyebrow">Our Story</p>
+        <div class="tmr-story">
+          <div class="tmr-story__text">
+            <h2 class="tmr-h2">One griddle, one recipe box</h2>
+            <p>Tacos Mi Rancho started small — one griddle, a family recipe box, and Ismael Godoy taking orders at the window. The name says it: <em>mi rancho</em>, my home ground, the kitchen these recipes came from.</p>
+            <p>It's still the same setup on N Barton St. Ismael still owns and runs the truck, the meat still hits the comal to order, and the salsas are still made in-house every day.</p>
+          </div>
+          <div class="tmr-story__panel">
+            <!-- Optional photo slot: set background-image on .tmr-story__panel for a shot of Ismael or the truck. -->
+            <div class="tmr-story__panel-inner">
+              <span class="tmr-kicker">Founder &amp; operator</span>
+              <span class="tmr-big">Ismael Godoy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FIND US ============ -->
+    <section class="tmr-section" id="find">
+      <div class="tmr-container">
+        <p class="tmr-eyebrow">Find Us</p>
+        <h2 class="tmr-h2">Corner of N Barton St</h2>
+        <p class="tmr-lede">Look for the maroon truck. Limited picnic seating in the shade.</p>
+
+        <div class="tmr-find">
+          <div class="tmr-loc-card">
+            <h3>Location</h3>
+            <address>
+              1401 N Barton St<br>
+              Arlington, VA 22201
+            </address>
+            <p class="tmr-loc-line">Tel · (571) 419-0377</p>
+            <div class="tmr-cta-row">
+              <a class="tmr-btn tmr-btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tacos+Mi+Rancho,+1401+N+Barton+St,+Arlington,+VA+22201" target="_blank" rel="noopener">Get directions</a>
+              <a class="tmr-btn tmr-btn--outline" href="tel:+15714190377">Call to order</a>
+            </div>
+          </div>
+
+          <div class="tmr-hours-card">
+            <span class="tmr-status-chip">Mon–Fri · 10am–9pm</span>
+            <h3>When we're open</h3>
+            <div class="tmr-hours-list">
+              <div class="tmr-hours-row" data-days="Monday,Tuesday,Wednesday,Thursday,Friday"><span class="tmr-day">Mon – Fri</span><span class="tmr-time">10am – 9pm</span></div>
+              <div class="tmr-hours-row" data-days="Saturday"><span class="tmr-day">Saturday</span><span class="tmr-time">Closed</span></div>
+              <div class="tmr-hours-row" data-days="Sunday"><span class="tmr-day">Sunday</span><span class="tmr-time">Closed</span></div>
+            </div>
+            <p class="tmr-hours-note">Hours shift with weather &amp; events — call ahead to be sure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="tmr-footer">
+    <div class="tmr-footer__inner">
+      <a class="tmr-wordmark" href="#top">Tacos Mi Rancho</a>
+      <nav class="tmr-footer__nav" aria-label="Footer">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#find">Find Us</a>
+        <a href="tel:+15714190377">Call</a>
+        <a href="https://www.google.com/maps/place/Tacos+Mi+Rancho/@38.8893822,-77.088424,17z" target="_blank" rel="noopener">Google Maps</a>
+      </nav>
+      <p class="tmr-footer__meta">
+        <span>© <span class="tmr-year">2026</span> Tacos Mi Rancho · Owner-operated by Ismael Godoy</span>
+        <span>Cash · Card · Call ahead</span>
+      </p>
+    </div>
+  </footer>
+
+</div>
