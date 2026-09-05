@@ -155,7 +155,7 @@
 .tmr-nav-links {
   display:flex;
   align-items:center;
-  gap:26px;
+  gap:20px;
 }
 .tmr-nav-links a {
   font-weight:700;
@@ -165,6 +165,23 @@
 }
 .tmr-nav-links a:hover { color:var(--accent); }
 .tmr-nav-links .tmr-btn--outline { font-size:.9rem; padding:9px 16px; }
+
+/* Language toggle — sits in the nav; label shows the language you'd switch TO. */
+.tmr-lang-toggle {
+  font-family:'Space Mono', monospace;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  padding:7px 13px;
+  border-radius:999px;
+  border:1.5px solid var(--border);
+  background:var(--bg-raised);
+  color:var(--text);
+  cursor:pointer;
+  white-space:nowrap;
+  transition:border-color .15s ease, color .15s ease;
+}
+.tmr-lang-toggle:hover { border-color:var(--accent); color:var(--accent); }
 
 .tmr-nav-toggle {
   display:none;
@@ -323,6 +340,52 @@
   font-weight:700;
   color:var(--price-text);
   white-space:nowrap;
+}
+
+/* ---------- Testimonials ---------- */
+.tmr-quote-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+}
+.tmr-quote {
+  margin:0;
+  background:var(--bg-raised);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:24px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.tmr-quote__mark {
+  font-family:'Bungee', system-ui, sans-serif;
+  font-size:2rem;
+  line-height:.8;
+  color:var(--accent);
+  opacity:.4;
+}
+.tmr-quote__text {
+  margin:0;
+  font-size:1.03rem;
+  color:var(--text);
+}
+.tmr-quote__cite {
+  font-family:'Space Mono', monospace;
+  font-size:.8rem;
+  letter-spacing:.04em;
+  color:var(--text-muted);
+  font-style:normal;
+  margin-top:auto;
+  padding-top:6px;
+}
+.tmr-quote__cite::before { content:"\2014\00a0"; }
+.tmr-placeholder-note {
+  margin:18px 0 0;
+  font-size:.82rem;
+  font-style:italic;
+  color:var(--text-muted);
 }
 
 /* ---------- Story ---------- */
@@ -514,7 +577,7 @@
   .tmr-find { grid-template-columns:1fr; }
 }
 
-@media (max-width:760px) {
+@media (max-width:900px) {
   .tmr-nav-toggle { display:inline-flex; }
   .tmr-nav-links {
     position:absolute;
@@ -532,6 +595,10 @@
   .tmr-nav-links a {
     padding:13px 0;
     border-top:1px solid var(--border);
+  }
+  .tmr-nav-links .tmr-lang-toggle {
+    align-self:flex-start;
+    margin-top:14px;
   }
   .tmr-nav-links .tmr-btn--outline {
     margin-top:12px;
