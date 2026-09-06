@@ -416,7 +416,9 @@
   text-transform:uppercase;
   color:var(--text-muted);
 }
-.tmr-photo__img {
+/* .tmr-page prefix so width/height win over the generic `.tmr-page img` rule
+   (which sets height:auto and would otherwise collapse the framed image) */
+.tmr-page .tmr-photo__img {
   position:absolute;
   inset:0;
   width:100%;
