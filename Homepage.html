@@ -1,14 +1,20 @@
 <!-- Tacos Mi Rancho — Homepage.html -->
-<!-- Body content only (no <head>, <style>, or <script>), ready to paste into a WordPress page/Custom HTML block. -->
+<!-- Body content only (no <head>, <style>, or <script>), ready to paste into a WordPress page / Custom HTML block. -->
 <!-- Pair with Homepage.css and Homepage.js. All markup is namespaced under .tmr-page. -->
 <!--
+  BILINGUAL: every translatable string carries data-i18n="key"; the English text
+  in the markup is the default (shown if Homepage.js does not load). Homepage.js
+  holds the Spanish strings and the EN/ES toggle. Add/adjust translations there.
+
   CONTENT TO VERIFY BEFORE LAUNCH:
-  - Hours: Google listing shows Mon–Fri 10am–9pm; weekend hours unknown (shown as Closed).
+  - Testimonials are PLACEHOLDER copy. Replace with real Google / Yelp quotes
+    (with each reviewer's permission) before this goes live. Marked on-page too.
   - All menu prices are illustrative placeholders — confirm with Ismael.
+  - Hours confirmed with Ismael: open every day, 10am–9pm.
   - Photo slots are marked with comments; drop images in via WordPress when available.
 -->
 
-<div class="tmr-page" id="top">
+<div class="tmr-page" id="top" lang="en">
 
   <header class="tmr-header">
     <div class="tmr-container">
@@ -16,14 +22,16 @@
         <a class="tmr-wordmark" href="#top">Tacos Mi Rancho</a>
 
         <button class="tmr-nav-toggle" type="button" aria-expanded="false" aria-controls="tmr-nav-links">
-          <span class="tmr-visually-hidden">Toggle menu</span>
+          <span class="tmr-visually-hidden" data-i18n="nav.toggleMenu">Toggle menu</span>
           <span class="tmr-nav-toggle__bar" aria-hidden="true"></span>
         </button>
 
         <div class="tmr-nav-links" id="tmr-nav-links">
-          <a href="#menu">Menu</a>
-          <a href="#story">Our Story</a>
-          <a href="#find">Find Us</a>
+          <a href="#menu" data-i18n="nav.menu">Menu</a>
+          <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+          <a href="#story" data-i18n="nav.story">Our Story</a>
+          <a href="#find" data-i18n="nav.find">Find Us</a>
+          <button class="tmr-lang-toggle" type="button" data-lang-toggle aria-label="Cambiar a espa&ntilde;ol" aria-pressed="false">Espa&ntilde;ol</button>
           <a class="tmr-btn tmr-btn--outline" href="tel:+15714190377">(571)&nbsp;419-0377</a>
         </div>
       </nav>
@@ -38,14 +46,25 @@
         <div class="tmr-hero">
           <!-- Optional: add a background photo of the truck via .tmr-hero { background-image: ... } in a child theme. -->
           <div class="tmr-hero__inner">
-            <span class="tmr-badge">Arlington, VA · Family-run</span>
-            <h1>Real tacos.<br>Parked on Barton&nbsp;St.</h1>
-            <p>Asada, pastor, lengua, birria — grilled to order on the truck at 1401 N Barton St. Cash, card, or call ahead.</p>
+            <span class="tmr-badge" data-i18n="hero.badge">Arlington, VA &middot; Family-run</span>
+            <h1><span data-i18n="hero.title1">Real tacos.</span><br><span data-i18n="hero.title2">Parked on Barton St.</span></h1>
+            <p data-i18n="hero.text">Asada, pastor, lengua, birria &mdash; grilled to order on the truck at 1401 N Barton St. Cash, card, or call ahead.</p>
             <div class="tmr-cta-row">
-              <a class="tmr-btn tmr-btn--primary" href="#menu">See the menu</a>
-              <a class="tmr-btn tmr-btn--ghost" href="#find">Find the truck</a>
+              <a class="tmr-btn tmr-btn--primary" href="#menu" data-i18n="hero.cta.menu">See the menu</a>
+              <a class="tmr-btn tmr-btn--ghost" href="#find" data-i18n="hero.cta.find">Find the truck</a>
             </div>
           </div>
+        </div>
+
+        <!-- PHOTOS (2): paste an image URL into each src="" and write a real alt.
+             Two landscape shots, roughly 1600x1000. Empty slots show a labelled frame. -->
+        <div class="tmr-hero-photos">
+          <figure class="tmr-photo" data-photo="the truck / the line at the window">
+            <img class="tmr-photo__img" src="" alt="" loading="eager" decoding="async">
+          </figure>
+          <figure class="tmr-photo" data-photo="a plate of tacos, close up">
+            <img class="tmr-photo__img" src="" alt="" loading="eager" decoding="async">
+          </figure>
         </div>
       </div>
     </section>
@@ -53,67 +72,102 @@
     <!-- ============ MENU ============ -->
     <section class="tmr-section" id="menu">
       <div class="tmr-container">
-        <p class="tmr-eyebrow">The Menu</p>
-        <h2 class="tmr-h2">Choose your meat</h2>
-        <p class="tmr-lede">Everything is grilled to your ticket — meat on the comal, tortillas warmed to order, and house salsas (verde, roja, and a smoky chile de árbol) on the side.</p>
+        <p class="tmr-eyebrow" data-i18n="menu.eyebrow">The Menu</p>
+        <h2 class="tmr-h2" data-i18n="menu.h2">Choose your meat</h2>
+        <p class="tmr-lede" data-i18n="menu.lede">Everything is grilled to your ticket &mdash; meat on the comal, tortillas warmed to order, and house salsas (verde, roja, and a smoky chile de &aacute;rbol) on the side.</p>
+
+        <!-- PHOTO (1): wide banner shot — the comal in action, tortillas warming. Paste URL into src="". Roughly 2000x760. -->
+        <figure class="tmr-photo tmr-photo--banner" data-photo="the comal in action, wide crop">
+          <img class="tmr-photo__img" src="" alt="" loading="lazy" decoding="async">
+        </figure>
 
         <!-- Prices below are illustrative placeholders — confirm before launch. -->
         <div class="tmr-menu-grid">
 
           <div class="tmr-card">
             <h3>Tacos</h3>
-            <p class="tmr-card__sub">Double corn tortilla, onion &amp; cilantro</p>
-            <div class="tmr-row"><span class="tmr-row__item">Asada<span class="tmr-row__desc">Grilled steak</span></span><span class="tmr-row__price">$3.50</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Pastor<span class="tmr-row__desc">Marinated pork, pineapple</span></span><span class="tmr-row__price">$3.50</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Pollo<span class="tmr-row__desc">Grilled chicken</span></span><span class="tmr-row__price">$3.50</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Carnitas<span class="tmr-row__desc">Braised pork</span></span><span class="tmr-row__price">$3.50</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Lengua<span class="tmr-row__desc">Beef tongue</span></span><span class="tmr-row__price">$4.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Camarón<span class="tmr-row__desc">Shrimp</span></span><span class="tmr-row__price">$4.50</span></div>
+            <p class="tmr-card__sub" data-i18n="menu.tacos.sub">Double corn tortilla, onion &amp; cilantro</p>
+            <div class="tmr-row"><span class="tmr-row__item">Asada<span class="tmr-row__desc" data-i18n="menu.d.asada">Grilled steak</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Pastor<span class="tmr-row__desc" data-i18n="menu.d.pastor">Marinated pork, pineapple</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Pollo<span class="tmr-row__desc" data-i18n="menu.d.pollo">Grilled chicken</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Carnitas<span class="tmr-row__desc" data-i18n="menu.d.carnitas">Braised pork</span></span><span class="tmr-row__price">$3.50</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Lengua<span class="tmr-row__desc" data-i18n="menu.d.lengua">Beef tongue</span></span><span class="tmr-row__price">$4.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Cam&aacute;r&oacute;n<span class="tmr-row__desc" data-i18n="menu.d.camaron">Shrimp</span></span><span class="tmr-row__price">$4.50</span></div>
           </div>
 
           <div class="tmr-card">
             <h3>Quesadillas</h3>
-            <p class="tmr-card__sub">Flour tortilla, melted Oaxaca cheese</p>
-            <div class="tmr-row"><span class="tmr-row__item">Cheese<span class="tmr-row__desc">Just cheese, done right</span></span><span class="tmr-row__price">$6.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Chorizo<span class="tmr-row__desc">House chorizo</span></span><span class="tmr-row__price">$9.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Asada<span class="tmr-row__desc">Grilled steak</span></span><span class="tmr-row__price">$10.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Pastor<span class="tmr-row__desc">Marinated pork</span></span><span class="tmr-row__price">$10.00</span></div>
+            <p class="tmr-card__sub" data-i18n="menu.quesadillas.sub">Flour tortilla, melted Oaxaca cheese</p>
+            <div class="tmr-row"><span class="tmr-row__item"><span data-i18n="menu.i.cheese">Cheese</span><span class="tmr-row__desc" data-i18n="menu.d.cheese">Just cheese, done right</span></span><span class="tmr-row__price">$6.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Chorizo<span class="tmr-row__desc" data-i18n="menu.d.chorizo">House chorizo</span></span><span class="tmr-row__price">$9.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Asada<span class="tmr-row__desc" data-i18n="menu.d.qasada">Grilled steak</span></span><span class="tmr-row__price">$10.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Pastor<span class="tmr-row__desc" data-i18n="menu.d.qpastor">Marinated pork</span></span><span class="tmr-row__price">$10.00</span></div>
           </div>
 
           <div class="tmr-card">
             <h3>Burritos &amp; Tortas</h3>
-            <p class="tmr-card__sub">Choice of meat, rice &amp; beans</p>
-            <div class="tmr-row"><span class="tmr-row__item">Burrito<span class="tmr-row__desc">Rice, beans, cheese, salsa</span></span><span class="tmr-row__price">$11.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Torta<span class="tmr-row__desc">Grilled roll, avocado, chipotle mayo</span></span><span class="tmr-row__price">$10.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Add guacamole<span class="tmr-row__desc">or extra meat</span></span><span class="tmr-row__price">$2.00</span></div>
+            <p class="tmr-card__sub" data-i18n="menu.burritos.sub">Choice of meat, rice &amp; beans</p>
+            <div class="tmr-row"><span class="tmr-row__item">Burrito<span class="tmr-row__desc" data-i18n="menu.d.burrito">Rice, beans, cheese, salsa</span></span><span class="tmr-row__price">$11.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Torta<span class="tmr-row__desc" data-i18n="menu.d.torta">Grilled roll, avocado, chipotle mayo</span></span><span class="tmr-row__price">$10.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item"><span data-i18n="menu.i.guac">Add guacamole</span><span class="tmr-row__desc" data-i18n="menu.d.guac">or extra meat</span></span><span class="tmr-row__price">$2.00</span></div>
           </div>
 
           <div class="tmr-card">
             <h3>Birria</h3>
-            <p class="tmr-card__sub">Slow-stewed beef, consommé to dip</p>
-            <div class="tmr-row"><span class="tmr-row__item">Birria Tacos<span class="tmr-row__desc">3 pieces + consommé</span></span><span class="tmr-row__price">$14.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Quesabirria<span class="tmr-row__desc">3 pieces, melted cheese</span></span><span class="tmr-row__price">$15.00</span></div>
-            <div class="tmr-row"><span class="tmr-row__item">Consommé<span class="tmr-row__desc">Cup, on its own</span></span><span class="tmr-row__price">$4.00</span></div>
+            <p class="tmr-card__sub" data-i18n="menu.birria.sub">Slow-stewed beef, consomm&eacute; to dip</p>
+            <div class="tmr-row"><span class="tmr-row__item"><span data-i18n="menu.i.birriaTacos">Birria Tacos</span><span class="tmr-row__desc" data-i18n="menu.d.birriaTacos">3 pieces + consomm&eacute;</span></span><span class="tmr-row__price">$14.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item">Quesabirria<span class="tmr-row__desc" data-i18n="menu.d.quesabirria">3 pieces, melted cheese</span></span><span class="tmr-row__price">$15.00</span></div>
+            <div class="tmr-row"><span class="tmr-row__item"><span data-i18n="menu.i.consomme">Consomm&eacute;</span><span class="tmr-row__desc" data-i18n="menu.d.consomme">Cup, on its own</span></span><span class="tmr-row__price">$4.00</span></div>
           </div>
 
         </div>
       </div>
     </section>
 
+    <!-- ============ REVIEWS ============ -->
+    <!-- PLACEHOLDER testimonials — swap in real, permissioned Google / Yelp quotes before launch. -->
+    <section class="tmr-section" id="reviews">
+      <div class="tmr-container">
+        <p class="tmr-eyebrow" data-i18n="reviews.eyebrow">What People Say</p>
+        <h2 class="tmr-h2" data-i18n="reviews.h2">A neighborhood favorite</h2>
+        <p class="tmr-lede" data-i18n="reviews.lede">Regulars from all over Arlington &mdash; and a few who drive in just for this.</p>
+
+        <div class="tmr-quote-grid">
+          <figure class="tmr-quote">
+            <span class="tmr-quote__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="tmr-quote__text" data-i18n="reviews.q1">Best tacos in Arlington, hands down. The birria with consomm&eacute; is exactly like what I grew up with.</blockquote>
+            <figcaption class="tmr-quote__cite" data-i18n="reviews.c1">Marisol R.</figcaption>
+          </figure>
+          <figure class="tmr-quote">
+            <span class="tmr-quote__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="tmr-quote__text" data-i18n="reviews.q2">I drive across the county for the lengua tacos. Ismael runs the griddle like a pro and it shows.</blockquote>
+            <figcaption class="tmr-quote__cite" data-i18n="reviews.c2">Danny T.</figcaption>
+          </figure>
+          <figure class="tmr-quote">
+            <span class="tmr-quote__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="tmr-quote__text" data-i18n="reviews.q3">My family's go-to on Barton Street. Fair prices, huge flavor, and the salsas are unreal.</blockquote>
+            <figcaption class="tmr-quote__cite" data-i18n="reviews.c3">The Herrera family</figcaption>
+          </figure>
+        </div>
+
+        <p class="tmr-placeholder-note" data-i18n="reviews.note">Placeholder quotes &mdash; real Google and Yelp reviews go here at launch.</p>
+      </div>
+    </section>
+
     <!-- ============ STORY ============ -->
     <section class="tmr-section" id="story">
       <div class="tmr-container">
-        <p class="tmr-eyebrow">Our Story</p>
+        <p class="tmr-eyebrow" data-i18n="story.eyebrow">Our Story</p>
         <div class="tmr-story">
           <div class="tmr-story__text">
-            <h2 class="tmr-h2">One griddle, one recipe box</h2>
-            <p>Tacos Mi Rancho started small — one griddle, a family recipe box, and Ismael Godoy taking orders at the window. The name says it: <em>mi rancho</em>, my home ground, the kitchen these recipes came from.</p>
-            <p>It's still the same setup on N Barton St. Ismael still owns and runs the truck, the meat still hits the comal to order, and the salsas are still made in-house every day.</p>
+            <h2 class="tmr-h2" data-i18n="story.h2">One griddle, one recipe box</h2>
+            <p data-i18n="story.p1">Tacos Mi Rancho started small &mdash; one griddle, a family recipe box, and Ismael Godoy taking orders at the window. The name says it: mi rancho, my home ground, the kitchen these recipes came from.</p>
+            <p data-i18n="story.p2">It's still the same setup on N Barton St. Ismael still owns and runs the truck, the meat still hits the comal to order, and the salsas are still made in-house every day.</p>
           </div>
           <div class="tmr-story__panel">
             <!-- Optional photo slot: set background-image on .tmr-story__panel for a shot of Ismael or the truck. -->
             <div class="tmr-story__panel-inner">
-              <span class="tmr-kicker">Founder &amp; operator</span>
+              <span class="tmr-kicker" data-i18n="story.kicker">Founder &amp; operator</span>
               <span class="tmr-big">Ismael Godoy</span>
             </div>
           </div>
@@ -124,35 +178,39 @@
     <!-- ============ FIND US ============ -->
     <section class="tmr-section" id="find">
       <div class="tmr-container">
-        <p class="tmr-eyebrow">Find Us</p>
-        <h2 class="tmr-h2">Corner of N Barton St</h2>
-        <p class="tmr-lede">Look for the maroon truck. Limited picnic seating in the shade.</p>
+        <p class="tmr-eyebrow" data-i18n="find.eyebrow">Find Us</p>
+        <h2 class="tmr-h2" data-i18n="find.h2">Corner of N Barton St</h2>
+        <p class="tmr-lede" data-i18n="find.lede">Look for the maroon truck. Limited picnic seating in the shade.</p>
 
         <div class="tmr-find">
           <div class="tmr-loc-card">
-            <h3>Location</h3>
+            <h3 data-i18n="find.loc.h3">Location</h3>
             <address>
               1401 N Barton St<br>
               Arlington, VA 22201
             </address>
-            <p class="tmr-loc-line">Tel · (571) 419-0377</p>
+            <p class="tmr-loc-line" data-i18n="find.loc.tel">Tel &middot; (571) 419-0377</p>
             <div class="tmr-cta-row">
-              <a class="tmr-btn tmr-btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tacos+Mi+Rancho,+1401+N+Barton+St,+Arlington,+VA+22201" target="_blank" rel="noopener">Get directions</a>
-              <a class="tmr-btn tmr-btn--outline" href="tel:+15714190377">Call to order</a>
+              <a class="tmr-btn tmr-btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tacos+Mi+Rancho,+1401+N+Barton+St,+Arlington,+VA+22201" target="_blank" rel="noopener" data-i18n="find.cta.dir">Get directions</a>
+              <a class="tmr-btn tmr-btn--outline" href="tel:+15714190377" data-i18n="find.cta.call">Call to order</a>
             </div>
           </div>
 
           <div class="tmr-hours-card">
-            <span class="tmr-status-chip">Mon–Fri · 10am–9pm</span>
-            <h3>When we're open</h3>
+            <span class="tmr-status-chip" data-i18n="find.hours.chipFallback">Open daily &middot; 10am&ndash;9pm</span>
+            <h3 data-i18n="find.hours.h3">When we're open</h3>
             <div class="tmr-hours-list">
-              <div class="tmr-hours-row" data-days="Monday,Tuesday,Wednesday,Thursday,Friday"><span class="tmr-day">Mon – Fri</span><span class="tmr-time">10am – 9pm</span></div>
-              <div class="tmr-hours-row" data-days="Saturday"><span class="tmr-day">Saturday</span><span class="tmr-time">Closed</span></div>
-              <div class="tmr-hours-row" data-days="Sunday"><span class="tmr-day">Sunday</span><span class="tmr-time">Closed</span></div>
+              <div class="tmr-hours-row" data-days="Monday,Tuesday,Wednesday,Thursday,Friday"><span class="tmr-day" data-i18n="find.hours.weekdays">Mon &ndash; Fri</span><span class="tmr-time" data-i18n="find.hours.time">10am &ndash; 9pm</span></div>
+              <div class="tmr-hours-row" data-days="Saturday,Sunday"><span class="tmr-day" data-i18n="find.hours.weekend">Sat &ndash; Sun</span><span class="tmr-time" data-i18n="find.hours.time">10am &ndash; 9pm</span></div>
             </div>
-            <p class="tmr-hours-note">Hours shift with weather &amp; events — call ahead to be sure.</p>
+            <p class="tmr-hours-note" data-i18n="find.hours.note">Hours shift with weather &amp; events &mdash; call ahead to be sure.</p>
           </div>
         </div>
+
+        <!-- PHOTO (1): the truck on the corner / street view so people recognise it. Paste URL into src="". Roughly 2000x860. -->
+        <figure class="tmr-photo tmr-photo--find" data-photo="the truck on the N Barton St corner">
+          <img class="tmr-photo__img" src="" alt="" loading="lazy" decoding="async">
+        </figure>
       </div>
     </section>
 
@@ -162,15 +220,16 @@
     <div class="tmr-footer__inner">
       <a class="tmr-wordmark" href="#top">Tacos Mi Rancho</a>
       <nav class="tmr-footer__nav" aria-label="Footer">
-        <a href="#menu">Menu</a>
-        <a href="#story">Our Story</a>
-        <a href="#find">Find Us</a>
-        <a href="tel:+15714190377">Call</a>
+        <a href="#menu" data-i18n="footer.nav.menu">Menu</a>
+        <a href="#reviews" data-i18n="footer.nav.reviews">Reviews</a>
+        <a href="#story" data-i18n="footer.nav.story">Our Story</a>
+        <a href="#find" data-i18n="footer.nav.find">Find Us</a>
+        <a href="tel:+15714190377" data-i18n="footer.nav.call">Call</a>
         <a href="https://www.google.com/maps/place/Tacos+Mi+Rancho/@38.8893822,-77.088424,17z" target="_blank" rel="noopener">Google Maps</a>
       </nav>
       <p class="tmr-footer__meta">
-        <span>© <span class="tmr-year">2026</span> Tacos Mi Rancho · Owner-operated by Ismael Godoy</span>
-        <span>Cash · Card · Call ahead</span>
+        <span>&copy; <span class="tmr-year">2026</span> <span data-i18n="footer.copy">Tacos Mi Rancho &middot; Owner-operated by Ismael Godoy</span></span>
+        <span data-i18n="footer.pay">Cash &middot; Card &middot; Call ahead</span>
       </p>
     </div>
   </footer>
