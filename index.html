@@ -398,6 +398,60 @@
   color:var(--text-muted);
 }
 
+/* ---------- Photo placeholders ---------- */
+/* Swap-in slots for real images: paste a URL into <img class="tmr-photo__img" src="">
+   and write a descriptive alt. An empty slot shows a labelled dashed frame so the
+   layout still reads; a filled one covers the frame. */
+.tmr-photo {
+  position:relative;
+  margin:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--bg-raised);
+  border:1px dashed var(--border);
+  aspect-ratio:16 / 10;
+}
+.tmr-photo::before {
+  content:"PHOTO \2014 " attr(data-photo);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  text-align:center;
+  font-family:'Space Mono', monospace;
+  font-size:.78rem;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.tmr-photo__img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.tmr-photo__img:not([src]),
+.tmr-photo__img[src=""] { display:none; }
+
+.tmr-hero-photos {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+.tmr-photo--banner { aspect-ratio:21 / 8; margin:4px 0 28px; }
+.tmr-photo--find { aspect-ratio:21 / 9; margin-top:20px; }
+
+@media (max-width:620px) {
+  .tmr-hero-photos { grid-template-columns:1fr; }
+  .tmr-photo--banner,
+  .tmr-photo--find { aspect-ratio:16 / 10; }
+}
+
 /* ---------- Story ---------- */
 .tmr-story {
   display:grid;
@@ -695,6 +749,17 @@
             </div>
           </div>
         </div>
+
+        <!-- PHOTOS (2): paste an image URL into each src="" and write a real alt.
+             Two landscape shots, roughly 1600x1000. Empty slots show a labelled frame. -->
+        <div class="tmr-hero-photos">
+          <figure class="tmr-photo" data-photo="the truck / the line at the window">
+            <img class="tmr-photo__img" src="" alt="" loading="eager" decoding="async">
+          </figure>
+          <figure class="tmr-photo" data-photo="a plate of tacos, close up">
+            <img class="tmr-photo__img" src="" alt="" loading="eager" decoding="async">
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -704,6 +769,11 @@
         <p class="tmr-eyebrow" data-i18n="menu.eyebrow">The Menu</p>
         <h2 class="tmr-h2" data-i18n="menu.h2">Choose your meat</h2>
         <p class="tmr-lede" data-i18n="menu.lede">Everything is grilled to your ticket &mdash; meat on the comal, tortillas warmed to order, and house salsas (verde, roja, and a smoky chile de &aacute;rbol) on the side.</p>
+
+        <!-- PHOTO (1): wide banner shot — the comal in action, tortillas warming. Paste URL into src="". Roughly 2000x760. -->
+        <figure class="tmr-photo tmr-photo--banner" data-photo="the comal in action, wide crop">
+          <img class="tmr-photo__img" src="" alt="" loading="lazy" decoding="async">
+        </figure>
 
         <!-- Prices below are illustrative placeholders — confirm before launch. -->
         <div class="tmr-menu-grid">
@@ -830,6 +900,11 @@
             <p class="tmr-hours-note" data-i18n="find.hours.note">Hours shift with weather &amp; events &mdash; call ahead to be sure.</p>
           </div>
         </div>
+
+        <!-- PHOTO (1): the truck on the corner / street view so people recognise it. Paste URL into src="". Roughly 2000x860. -->
+        <figure class="tmr-photo tmr-photo--find" data-photo="the truck on the N Barton St corner">
+          <img class="tmr-photo__img" src="" alt="" loading="lazy" decoding="async">
+        </figure>
       </div>
     </section>
 
